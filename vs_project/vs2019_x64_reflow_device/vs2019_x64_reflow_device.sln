@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vs2019_x64_reflow_device", "vs2019_x64_reflow_device\vs2019_x64_reflow_device.vcxproj", "{A63B235D-8E6C-4421-876C-2C56A19003B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Debug|x64.ActiveCfg = Debug|x64
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Debug|x64.Build.0 = Debug|x64
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Debug|x86.ActiveCfg = Debug|Win32
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Debug|x86.Build.0 = Debug|Win32
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Release|x64.ActiveCfg = Release|x64
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Release|x64.Build.0 = Release|x64
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Release|x86.ActiveCfg = Release|Win32
+		{A63B235D-8E6C-4421-876C-2C56A19003B2}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE318FD0-2F67-4F8F-A2F7-EFF51E2357C3}
+	EndGlobalSection
+EndGlobal

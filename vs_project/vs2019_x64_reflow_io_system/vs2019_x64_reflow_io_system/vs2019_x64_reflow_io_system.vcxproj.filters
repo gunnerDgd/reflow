@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\traits">
+      <UniqueIdentifier>{02dd582b-7bba-493c-9ff0-4447dab2acef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\method">
+      <UniqueIdentifier>{bae06b48-1835-4ba8-be30-3f8931afd1ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\method\fpga">
+      <UniqueIdentifier>{340611a8-2cb4-41ec-beb9-0e36b6928544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\protocol">
+      <UniqueIdentifier>{13970a8b-51a1-470e-8f2f-606f95595c56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\protocol\fpga">
+      <UniqueIdentifier>{983da27e-f13c-49cf-b112-a1c01f4f8f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\device">
+      <UniqueIdentifier>{63883771-3fa0-4f1f-8494-dda248ee2fc4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\reflow\io_system\define.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\basic_reader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\traits\basic_reader_traits.hpp">
+      <Filter>Header Files\traits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\os_reader_method.hpp">
+      <Filter>Header Files\method</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\fpga\uart_reader.hpp">
+      <Filter>Header Files\method\fpga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\protocol\fpga\protocol.hpp">
+      <Filter>Header Files\protocol\fpga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\protocol\fpga\uart.hpp">
+      <Filter>Header Files\protocol\fpga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\basic_writer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\fpga\uart_writer.hpp">
+      <Filter>Header Files\method\fpga</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\traits\basic_writer_traits.hpp">
+      <Filter>Header Files\traits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\os_writer_method.hpp">
+      <Filter>Header Files\method</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\device\fpga.hpp">
+      <Filter>Header Files\device</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
