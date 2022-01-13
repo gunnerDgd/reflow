@@ -22,15 +22,22 @@
     <ClInclude Include="..\..\..\include\reflow\io_system\basic_reader.hpp" />
     <ClInclude Include="..\..\..\include\reflow\io_system\basic_writer.hpp" />
     <ClInclude Include="..\..\..\include\reflow\io_system\define.hpp" />
-    <ClInclude Include="..\..\..\include\reflow\io_system\device\fpga.hpp" />
-    <ClInclude Include="..\..\..\include\reflow\io_system\method\fpga\uart_reader.hpp" />
-    <ClInclude Include="..\..\..\include\reflow\io_system\method\fpga\uart_writer.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\io_system\device\disk\standard_file.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\io_system\device\peripheral\uart_device.hpp" />
     <ClInclude Include="..\..\..\include\reflow\io_system\method\os_reader_method.hpp" />
     <ClInclude Include="..\..\..\include\reflow\io_system\method\os_writer_method.hpp" />
-    <ClInclude Include="..\..\..\include\reflow\io_system\protocol\fpga\protocol.hpp" />
-    <ClInclude Include="..\..\..\include\reflow\io_system\protocol\fpga\uart.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\uart\uart_reader.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\uart\uart_writer.hpp" />
     <ClInclude Include="..\..\..\include\reflow\io_system\traits\basic_reader_traits.hpp" />
     <ClInclude Include="..\..\..\include\reflow\io_system\traits\basic_writer_traits.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\io_system\device\device_stdfile.cpp" />
+    <ClCompile Include="..\..\..\source\io_system\device\device_uart.cpp" />
+    <ClCompile Include="..\..\..\source\io_system\method\os_reader_method.cpp" />
+    <ClCompile Include="..\..\..\source\io_system\method\os_writer_method.cpp" />
+    <ClCompile Include="..\..\..\source\io_system\method\uart_reader.cpp" />
+    <ClCompile Include="..\..\..\source\io_system\method\uart_writer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -137,7 +144,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>

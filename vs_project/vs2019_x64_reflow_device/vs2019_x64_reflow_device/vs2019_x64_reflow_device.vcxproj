@@ -18,6 +18,18 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\reflow\device\fpga\fpga.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\device\protocol\fpga\protocol.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\device\protocol\fpga\read_encapsulate.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\device\protocol\fpga\uart.hpp" />
+    <ClInclude Include="..\..\..\include\reflow\device\protocol\fpga\write_encapsulate.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\device\fpga\fpga.cpp" />
+    <ClCompile Include="..\..\..\source\device\protocol\fpga_read_encapsulate.cpp" />
+    <ClCompile Include="..\..\..\source\device\protocol\fpga_write_encapsulate.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -123,7 +135,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>

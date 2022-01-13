@@ -19,17 +19,23 @@
     <Filter Include="Header Files\method">
       <UniqueIdentifier>{bae06b48-1835-4ba8-be30-3f8931afd1ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\method\fpga">
-      <UniqueIdentifier>{340611a8-2cb4-41ec-beb9-0e36b6928544}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\protocol">
-      <UniqueIdentifier>{13970a8b-51a1-470e-8f2f-606f95595c56}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\protocol\fpga">
-      <UniqueIdentifier>{983da27e-f13c-49cf-b112-a1c01f4f8f6b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\device">
       <UniqueIdentifier>{63883771-3fa0-4f1f-8494-dda248ee2fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\method\uart">
+      <UniqueIdentifier>{340611a8-2cb4-41ec-beb9-0e36b6928544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\device\peripheral">
+      <UniqueIdentifier>{edee8277-abce-4097-92a7-fd29239d20ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\device\disk">
+      <UniqueIdentifier>{81e85d73-467e-4e04-bcca-91753bcfc21c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\method">
+      <UniqueIdentifier>{6df1be1c-29da-41f1-ae9a-a0654e194101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\device">
+      <UniqueIdentifier>{cc85ac3b-06ec-429a-92bf-f55b247e4b12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -45,20 +51,8 @@
     <ClInclude Include="..\..\..\include\reflow\io_system\method\os_reader_method.hpp">
       <Filter>Header Files\method</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\reflow\io_system\method\fpga\uart_reader.hpp">
-      <Filter>Header Files\method\fpga</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\reflow\io_system\protocol\fpga\protocol.hpp">
-      <Filter>Header Files\protocol\fpga</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\reflow\io_system\protocol\fpga\uart.hpp">
-      <Filter>Header Files\protocol\fpga</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\include\reflow\io_system\basic_writer.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\include\reflow\io_system\method\fpga\uart_writer.hpp">
-      <Filter>Header Files\method\fpga</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\include\reflow\io_system\traits\basic_writer_traits.hpp">
       <Filter>Header Files\traits</Filter>
@@ -66,8 +60,37 @@
     <ClInclude Include="..\..\..\include\reflow\io_system\method\os_writer_method.hpp">
       <Filter>Header Files\method</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\include\reflow\io_system\device\fpga.hpp">
-      <Filter>Header Files\device</Filter>
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\uart\uart_reader.hpp">
+      <Filter>Header Files\method\uart</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\method\uart\uart_writer.hpp">
+      <Filter>Header Files\method\uart</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\device\peripheral\uart_device.hpp">
+      <Filter>Header Files\device\peripheral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\include\reflow\io_system\device\disk\standard_file.hpp">
+      <Filter>Header Files\device\disk</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\io_system\method\os_reader_method.cpp">
+      <Filter>Source Files\method</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\io_system\method\os_writer_method.cpp">
+      <Filter>Source Files\method</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\io_system\method\uart_reader.cpp">
+      <Filter>Source Files\method</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\io_system\method\uart_writer.cpp">
+      <Filter>Source Files\method</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\io_system\device\device_stdfile.cpp">
+      <Filter>Source Files\device</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\io_system\device\device_uart.cpp">
+      <Filter>Source Files\device</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

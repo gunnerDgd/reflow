@@ -12,37 +12,22 @@ namespace reflow {
 		typedef WriteMethod::handle_type method_handle;
 
 	public:
-		basic_writer_traits(std::string);
-
-	public:
-		bool		open();
-		bool		close();
+		template <typename... InitArgs>
+		basic_writer_traits	   (InitArgs&&...) requires std::is_constructible_v<typename WriteMethod::handle_type, InitArgs...>;
 		std::size_t write_block(write_type*, std::size_t);
 
 	private:
 		method_handle __M_traits_handle;
-		std::string   __M_traits_string;
 	};
 }
 
 template <typename WriteType, typename WriteMethod>
-reflow::basic_writer_traits<WriteType, WriteMethod>::basic_writer_traits(std::string file_name)
-	: __M_traits_string(std::move(file_name)) {  }
-
-template <typename WriteType, typename WriteMethod>
-bool reflow::basic_writer_traits<WriteType, WriteMethod>::open()
-{
-	return method_type::open(__M_traits_handle, __M_traits_string);
-}
-
-template <typename WriteType, typename WriteMethod>
-bool reflow::basic_writer_traits<WriteType, WriteMethod>::close()
-{
-	return method_type::close(__M_traits_handle);
-}
+template <typename... InitArgs>
+reflow::basic_writer_traits<WriteType, WriteMethod>::basic_writer_traits(InitArgs&&... init_args) requires std::is_constructible_v<typename WriteMethod::handle_type, InitArgs...>
+	: __M_traits_handle(std::forward<InitArgs>(init_args)...) {  }
 
 template <typename WriteType, typename WriteMethod>
 std::size_t reflow::basic_writer_traits<WriteType, WriteMethod>::write_block(write_type* read_vector, std::size_t read_count)
 {
-	return method_type::write(__M_traits_handle, read_vector, read_count * sizeof(read_type));
+	return method_type::write(__M_traits_handle, read_vector, read_count * sizeof(write_type));
 }
