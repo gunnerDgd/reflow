@@ -3,7 +3,7 @@
 #include <string>
 
 namespace reflow {
-	class uart_device
+	class uart
 	{
 		friend class uart_read_method ;
 		friend class uart_write_method;
@@ -19,7 +19,7 @@ namespace reflow {
 		typedef DCB    config_type;
 		class		   config
 		{
-			friend class uart_device;
+			friend class uart;
 		public:
 			enum class baud_rate : uint32_t
 			{
@@ -51,8 +51,8 @@ namespace reflow {
 		};
 		
 	public:
-		uart_device (std::string, config);
-		~uart_device();
+		uart (std::string, config);
+		~uart();
 
 	private:
 		handle_type __M_device_handle;

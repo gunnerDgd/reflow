@@ -12,19 +12,19 @@ namespace reflow {
 		typedef ReadMethod::handle_type method_handle;
 
 	public:
-		template <typename... InitArgs>
-		basic_reader_traits	  (InitArgs&&...) requires std::is_constructible_v<typename ReadMethod::handle_type, InitArgs...>;
+		basic_reader_traits	  (method_handle&);
 		std::size_t read_block(read_type*, std::size_t);
 
 	private:
-		method_handle __M_traits_handle;
+		method_handle& __M_traits_handle;
 	};
 }
 
 template <typename ReadType, typename ReadMethod>
-template <typename... InitArgs>
-reflow::basic_reader_traits<ReadType, ReadMethod>::basic_reader_traits(InitArgs&&... init_args) requires std::is_constructible_v<typename ReadMethod::handle_type, InitArgs...>
-	: __M_traits_handle(std::forward<InitArgs>(init_args)...) {  }
+reflow::basic_reader_traits<ReadType, ReadMethod>::basic_reader_traits(method_handle& init_args) : __M_traits_handle(init_args) 
+{
+
+}
 
 template <typename ReadType, typename ReadMethod>
 std::size_t reflow::basic_reader_traits<ReadType, ReadMethod>::read_block(read_type* read_vector, std::size_t read_count)

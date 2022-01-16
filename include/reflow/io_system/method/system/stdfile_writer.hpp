@@ -3,12 +3,10 @@
 #include <string>
 
 namespace reflow {
-	class os_reader_method
+	class standard_file_writer
 	{
 	public:
 		typedef standard_file handle_type;
-
-	public:
-		static std::size_t read (handle_type&, uint8_t*, std::size_t);
+		static std::size_t write(handle_type&, uint8_t*, std::size_t);
 	};
 }

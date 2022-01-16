@@ -1,6 +1,5 @@
 #pragma once
-#include <cstdint>
-#include <cstddef>
+#include <reflow/session/protocol/fpga/uart.hpp>
 
 namespace reflow   {
 namespace protocol {

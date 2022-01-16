@@ -5,8 +5,8 @@
 namespace reflow {
 	class standard_file
 	{
-		friend class os_reader_method;
-		friend class os_writer_method;
+		friend class standard_file_reader;
+		friend class standard_file_writer;
 	public:
 		typedef HANDLE handle_type;
 		class		   config;
