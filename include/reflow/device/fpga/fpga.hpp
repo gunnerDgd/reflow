@@ -24,7 +24,7 @@ namespace reflow {
 		friend class fpga_memory;
 	public:
 		typedef protocol::fpga protocol_type;
-		typedef uart_device	   device_type;
+		typedef uart_device	   device_type  ;
 
 		typedef basic_reader<protocol_type::header, basic_reader_traits<protocol_type::header, uart_read_method>>  read_type;
 		typedef basic_writer<protocol_type::header, basic_writer_traits<protocol_type::header, uart_write_method>> write_type;

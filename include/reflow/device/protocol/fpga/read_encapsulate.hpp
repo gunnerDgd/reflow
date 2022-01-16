@@ -5,6 +5,7 @@ namespace reflow {
 	typedef basic_reader_traits<protocol::fpga::device_operation, uart_read_method> fpga_device_read;
 	typedef basic_reader_traits<protocol::fpga::memory_operation, uart_read_method> fpga_memory_read;
 
+	template <>
 	class basic_reader_traits<protocol::fpga::device_operation, uart_read_method>
 	{
 	public:
@@ -20,6 +21,7 @@ namespace reflow {
 		fpga::uart&	__M_traits_handle;
 	};
 
+	template <>
 	class basic_reader_traits<protocol::fpga::memory_operation, uart_read_method>
 	{
 	public:

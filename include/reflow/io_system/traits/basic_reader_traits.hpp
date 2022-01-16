@@ -29,5 +29,5 @@ reflow::basic_reader_traits<ReadType, ReadMethod>::basic_reader_traits(InitArgs&
 template <typename ReadType, typename ReadMethod>
 std::size_t reflow::basic_reader_traits<ReadType, ReadMethod>::read_block(read_type* read_vector, std::size_t read_count)
 {
-	return method_type::read(__M_traits_handle, read_vector, read_count * sizeof(read_type));
+	return method_type::read(__M_traits_handle, (uint8_t*)read_vector, read_count * sizeof(read_type));
 }

@@ -11,3 +11,6 @@
 
 #define REFLOW_MEMORY_VMEM_RESERVE(ptr, size) ::VirtualAlloc(ptr, size, MEM_RESERVE, PAGE_READWRITE)
 #define REFLOW_MEMORY_VMEM_COMMIT(ptr, size)  ::VirtualAlloc(ptr, size, MEM_COMMIT , PAGE_READWRITE)
+
+#define REFLOW_MEMORY_FAIL_IF(cond, ret)  if(cond) return ret;
+#define REFLOW_MEMORY_THROW_IF(cond, thr) if(cond) throw  thr; 

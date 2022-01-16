@@ -27,7 +27,7 @@ reflow::basic_writer_traits<WriteType, WriteMethod>::basic_writer_traits(InitArg
 	: __M_traits_handle(std::forward<InitArgs>(init_args)...) {  }
 
 template <typename WriteType, typename WriteMethod>
-std::size_t reflow::basic_writer_traits<WriteType, WriteMethod>::write_block(write_type* read_vector, std::size_t read_count)
+std::size_t reflow::basic_writer_traits<WriteType, WriteMethod>::write_block(write_type* write_vector, std::size_t write_count)
 {
-	return method_type::write(__M_traits_handle, read_vector, read_count * sizeof(write_type));
+	return method_type::write(__M_traits_handle, (uint8_t*)write_vector, write_count * sizeof(write_type));
 }

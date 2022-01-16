@@ -10,7 +10,6 @@ namespace reflow {
 		typedef basic_reader<ReadType, ReadTraits> reader_type;
 		typedef ReadType						   read_type;
 		typedef ReadTraits						   traits_type;
-		typedef typename ReadTraits::handle_type   handle_type;
 
 	public:
 		template <typename... OpenArgument>
@@ -31,7 +30,7 @@ namespace reflow {
 template <typename ReadType, typename ReadTraits>
 template <typename... OpenArgument>
 reflow::basic_reader<ReadType, ReadTraits>::basic_reader(OpenArgument&&... open_args)
-	: __M_reader_handle(traits_type(std::forward<OpenArgument>(open_args)...)) { __M_reader_handle.open(); }
+	: __M_reader_handle(traits_type(std::forward<OpenArgument>(open_args)...)) {  }
 
 template <typename ReadType, typename ReadTraits>
 reflow::basic_reader<ReadType, ReadTraits>::~basic_reader() {  }

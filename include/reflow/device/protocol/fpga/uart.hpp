@@ -55,6 +55,7 @@ namespace protocol {
 		memory_handle mem_handle;
 		memory_type   mem_type  ;
 		std::uint32_t mem_size  ;
+		std::uint32_t mem_offset;
 	};
 
 	struct fpga::device_operation

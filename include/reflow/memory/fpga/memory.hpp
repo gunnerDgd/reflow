@@ -1,34 +1,44 @@
 #pragma once
 #include <reflow/device/fpga/fpga.hpp>
 
+#include <reflow/device/protocol/fpga/read_encapsulate.hpp>
+#include <reflow/device/protocol/fpga/write_encapsulate.hpp>
+
+#include <reflow/memory/define.hpp>
+
 namespace reflow {
 	class fpga_memory
 	{
 	public:
-		template <typename FpgaConnection>
+		template <typename FpgaConnection, typename AllocType>
 		class local;
 
-		template <typename FpgaConnection>
+		template <typename FpgaConnection, typename AllocType>
 		class logic;
 	};
 
-	template <>
-	class fpga_memory::local<fpga::uart>
+	template <typename AllocType>
+	class fpga_memory::local<fpga::uart, AllocType>
 	{
 	public:
 		class   accessor;
+		typedef accessor  pointer_type;
+		typedef AllocType alloc_type;
 
 		typedef protocol::fpga::header			 protocol_header;
 		typedef protocol::fpga::memory_operation protocol_memory;
 
-		typedef basic_reader <protocol_memory, basic_reader_traits<protocol_memory, uart_read_method>> read_type ;
-		typedef basic_writer <protocol_memory, basic_reader_traits<protocol_memory, uart_read_method>> write_type;
+		typedef fpga_memory_read  read_type ;
+		typedef fpga_memory_write write_type;
+
+		typedef decltype(protocol::fpga::memory_operation::mem_handle) handle_type;
+		typedef decltype(protocol::fpga::memory_operation::mem_size)   size_type;
 
 	public:
 		local (fpga::uart&);
 		~local();
 
-		accessor allocate  (std::uint32_t);
+		accessor allocate  (size_type);
 		void     deallocate(accessor&);
 
 	private:
@@ -37,34 +47,5 @@ namespace reflow {
 		write_type  __M_local_memory_write ;
 	};
 
-	class fpga_memory::local<fpga::uart>::accessor
-	{
-	private:
-		
-
-	public:
-	};
-}
-
-reflow::fpga_memory::local<reflow::fpga::uart>::local(fpga::uart& device) : __M_local_memory_device(device),
-																			__M_local_memory_read  (__M_local_memory_device.__M_uart_device),
-																			__M_local_memory_write (__M_local_memory_device.__M_uart_device) {  }
-
-reflow::fpga_memory::local<reflow::fpga::uart>::accessor reflow::fpga_memory::local<reflow::fpga::uart>::allocate(std::uint32_t size)
-{
-	protocol::fpga::header alloc_header;
-	alloc_header.hdr_opcode  = protocol::fpga::major_opcode::memory;
-	alloc_header.hdr_session = __M_local_memory_device.__M_uart_device_session;
-
-	__M_local_memory_device.__M_uart_device_write.write(alloc_header);
-
-	protocol::fpga::memory_operation alloc_memory;
-	alloc_memory.mem_opcode = protocol::fpga::memory_operation::memory_opcode::create;
-	alloc_memory.mem_size   = size;
-
-	alloc_memory.mem_handle = 0;
-	alloc_memory.mem_type   = protocol::fpga::memory_operation::memory_type::local;
-
-	__M_local_memory
-
+	
 }

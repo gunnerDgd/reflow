@@ -5,6 +5,7 @@ namespace reflow {
 	typedef basic_writer_traits<protocol::fpga::device_operation, uart_write_method> fpga_device_write;
 	typedef basic_writer_traits<protocol::fpga::memory_operation, uart_write_method> fpga_memory_write;
 
+	template <>
 	class basic_writer_traits<protocol::fpga::device_operation, uart_write_method>
 	{
 	public:
@@ -20,6 +21,7 @@ namespace reflow {
 		fpga::uart& __M_traits_handle;
 	};
 
+	template <>
 	class basic_writer_traits<protocol::fpga::memory_operation, uart_write_method>
 	{
 	public:
