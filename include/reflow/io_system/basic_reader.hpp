@@ -13,7 +13,7 @@ namespace reflow {
 
 	public:
 		template <typename... OpenArgument>
-		basic_reader (OpenArgument&&...);
+		basic_reader (OpenArgument&&...) requires std::is_constructible_v<traits_type, OpenArgument...>;
 		~basic_reader();
 
 	public:
@@ -29,7 +29,7 @@ namespace reflow {
 
 template <typename ReadType, typename ReadTraits>
 template <typename... OpenArgument>
-reflow::basic_reader<ReadType, ReadTraits>::basic_reader(OpenArgument&&... open_args)
+reflow::basic_reader<ReadType, ReadTraits>::basic_reader(OpenArgument&&... open_args) requires std::is_constructible_v<traits_type, OpenArgument...>
 	: __M_reader_handle(traits_type(std::forward<OpenArgument>(open_args)...)) {  }
 
 template <typename ReadType, typename ReadTraits>

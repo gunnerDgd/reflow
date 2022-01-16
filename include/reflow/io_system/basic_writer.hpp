@@ -13,7 +13,7 @@ namespace reflow {
 
 	public:
 		template <typename... OpenArgument>
-		basic_writer (OpenArgument&&...);
+		basic_writer (OpenArgument&&...) requires std::is_constructible_v<traits_type, OpenArgument...>;
 		~basic_writer();
 
 	public:
@@ -29,7 +29,7 @@ namespace reflow {
 
 template <typename WriteType, typename WriteTraits>
 template <typename... OpenArgument>
-reflow::basic_writer<WriteType, WriteTraits>::basic_writer(OpenArgument&&... open_args)
+reflow::basic_writer<WriteType, WriteTraits>::basic_writer(OpenArgument&&... open_args) requires std::is_constructible_v<traits_type, OpenArgument...>
 	: __M_write_handle(traits_type(std::forward<OpenArgument>(open_args)...)) {  }
 
 template <typename WriteType, typename WriteTraits>

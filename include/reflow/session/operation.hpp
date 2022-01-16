@@ -3,7 +3,7 @@
 #include <cstddef>
 
 namespace reflow {
-	enum class session_message
+	enum class session_operation
 	{
 		failure = 0,
 		
